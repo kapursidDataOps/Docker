@@ -1,0 +1,14 @@
+
+Docker Image Built:
+docker build -t siddhantkapur98/docker-new:0.0.1.RELEASE .
+
+Docker Container run:
+docker run -d -p 5100:5100 siddhantkapur98/docker-new:0.0.1.RELEASE
+
+Push to Docker hub:
+docker push siddhantkapur98/docker-new:0.0.1.RELEASE
+
+Kubernetes Cluster creation:
+kubectl create deployment hello-world-python --image=siddhantkapur98/docker-new:0.0.1.RELEASE
+kubectl expose deployment hello-world-python --type=LoadBalancer --port=5100
+kubectl autoscale deployment hello-world-python --max=10 --cpu-percent=70
